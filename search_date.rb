@@ -2,7 +2,7 @@ require 'active_support/all'
 require 'active_support/core_ext/date'
 
 class SearchDate
-  def date
+  def latest_trade_date
     if today_is_holiday?
       Date.current.beginning_of_week + 4.days
     else

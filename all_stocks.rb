@@ -4,7 +4,7 @@ require_relative 'search_date'
 class AllStocks
   # 列出 search_date 中，所有股票的資訊
   def get_all_stock_within_date
-    url = "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=#{SearchDate.new.date}&type=ALLBUT0999&response=json"
+    url = "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=#{SearchDate.new.latest_trade_date}&type=ALLBUT0999&response=json"
 
     stacks_json = RequestApi.new(url).parsed_json
 
